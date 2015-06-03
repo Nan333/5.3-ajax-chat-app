@@ -35,4 +35,17 @@
     console.log('username:', username);
   }
 
+var messages = [{
+  username: "jake",
+  created_at:new Date(),
+  content: Math.random()
+}]
+
 })();
+
+// functionMessage ({
+//   username: "Your username",
+//   created_at: newDate(),
+//   content: your message,
+//   avatar: "Any pic you want"(url)
+// })
