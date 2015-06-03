@@ -1,3 +1,4 @@
+- [x] make repo
 - [ ] HTML structure and layout
   - [x] HTML structure and layout for login screen
   - [x] Respond to URL changes by loading login on '/' and a (for now) empty chat screen on '/chat'
