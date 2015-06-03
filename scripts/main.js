@@ -33,6 +33,7 @@
   function renderChat() {
     $('.application').html(JST['chat']());
     console.log('username:', username);
+    fetchMessages()
   }
 
 var messages = [{
@@ -43,9 +44,26 @@ var messages = [{
 
 })();
 
-// functionMessage ({
-//   username: "Your username",
-//   created_at: newDate(),
-//   content: your message,
-//   avatar: "Any pic you want"(url)
-// })
+function fetchMessages() {
+  console.log("fetch");
+  $.ajax({
+    url: "http://tiny-lasagna-server.herokuapp.com/collections/messages/",
+  }).then(function(data){
+    console.log(data);
+    renderMessages(data);
+  })
+
+}
+
+function renderMessages(messages){
+  $('.messages-container').html(JST['messages'](messages));
+
+}
+
+
+functionMessage ({
+  username: "Your username",
+  created_at: newDate(),
+  content: your message,
+  avatar: "Any pic you want"(url)
+})
