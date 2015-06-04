@@ -1,6 +1,6 @@
 this["JST"] = this["JST"] || {};
 this["JST"]["chat"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<h1>Chat</h1>\n<section class=\"messages-container\"></section>\n<form class=\"chat-form\">\n  <input/>\n  <button>Send</button>\n</form>\n";
+    return "<h1>Chat</h1>\n<section class=\"messages-container\"></section>\n<form class=\"chat-form\">\n  <input/>\n  <button>Submit</button>\n</form>\n";
 },"useData":true});
 this["JST"]["login"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     return "<form class=\"login-form\">\n  <input class=\"login-form-username\" type=\"text\" placeholder=\"Username\">\n  <input type=\"submit\" value=\"Log In\">\n</form>\n";

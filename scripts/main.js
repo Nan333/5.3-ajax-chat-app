@@ -60,10 +60,20 @@ function renderMessages(messages){
 
 }
 
-
-functionMessage ({
-  username: "Your username",
-  created_at: newDate(),
-  content: your message,
-  avatar: "Any pic you want"(url)
+$.ajax({
+  method: "POST",
+  url: "http://tiny-lasagna-server.herokuapp.com/collections/messages/",
+  data: { username: "Your username", content: "Hohoho", posted_at: new Date()}
 })
+  .done(function( msg ) {
+    alert( "Data Saved: " + msg );
+  });
+
+
+
+// functionMessage ({
+//   username: "Your username",
+//   created_at: newDate(),
+//   content: your message,
+//   avatar: "Any pic you want"(url)
+// })
