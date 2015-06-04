@@ -67,7 +67,10 @@ $(function(){
     }
   });
   $("#button").click(function() {
-    $("#textbox").val("")
+    var newMessage = $("#textbox").val();
+    $("#textbox").val("");
+    var prevState = $(".messages-container").html();
+    $(".messages-container").html(prevState + "<br>" + newMessage);
   });
 });
 
