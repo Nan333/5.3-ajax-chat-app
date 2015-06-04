@@ -60,14 +60,16 @@ function renderMessages(messages){
 
 }
 
-$.ajax({
-  method: "POST",
-  url: "http://tiny-lasagna-server.herokuapp.com/collections/messages/",
-  data: { username: "Your username", content: "Hohoho", posted_at: new Date()}
-})
-  .done(function( msg ) {
-    alert( "Data Saved: " + msg );
+$(function(){
+  $("#textbox").keypress(function(event){
+    if(event.which === 13) {
+      event.preventDefault();
+    }
   });
+  $("#button").click(function() {
+    $("#textbox").val("")
+  });
+});
 
 
 
