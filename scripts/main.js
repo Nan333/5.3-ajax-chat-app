@@ -33,6 +33,52 @@
   function renderChat() {
     $('.application').html(JST['chat']());
     console.log('username:', username);
+    fetchMessages()
   }
 
+var messages = [{
+  username: "jake",
+  created_at:new Date(),
+  content: Math.random()
+}]
+
 })();
+
+function fetchMessages() {
+  console.log("fetch");
+  $.ajax({
+    url: "http://tiny-lasagna-server.herokuapp.com/collections/messages/",
+  }).then(function(data){
+    console.log(data);
+    renderMessages(data);
+  })
+
+}
+
+function renderMessages(messages){
+  $('.messages-container').html(JST['messages'](messages));
+
+}
+
+$(function(){
+  $("#textbox").keypress(function(event){
+    if(event.which === 13) {
+      event.preventDefault();
+    }
+  });
+  $("#button").click(function() {
+    var newMessage = $("#textbox").val();
+    $("#textbox").val("");
+    var prevState = $(".messages-container").html();
+    $(".messages-container").html(prevState + "<br>" + newMessage);
+  });
+});
+
+
+
+// functionMessage ({
+//   username: "Your username",
+//   created_at: newDate(),
+//   content: your message,
+//   avatar: "Any pic you want"(url)
+// })
